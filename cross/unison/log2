@@ -1,0 +1,202 @@
+hasgot sigaction sigprocmask: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+trycompile: arm-marvell-linux-gnueabi-gcc -O  -o tst expm1.c -lm 
+arm-marvell-linux-gnueabi-gcc: error: expm1.c: No such file or directory
+hasgot getrusage: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot times: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot tgetent tgetstr tgetnum tputs: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+/tmp/ccMhbRp9.o: In function `main':
+hasgot.c:(.text+0x4): undefined reference to `tgetent'
+hasgot.c:(.text+0x8): undefined reference to `tgetstr'
+hasgot.c:(.text+0xc): undefined reference to `tgetnum'
+hasgot.c:(.text+0x10): undefined reference to `tputs'
+collect2: ld returned 1 exit status
+hasgot -lcurses tgetent tgetstr tgetnum tputs: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -lcurses
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../lib/gcc/arm-marvell-linux-gnueabi/4.6.4/../../../../arm-marvell-linux-gnueabi/bin/ld: cannot find -lcurses
+collect2: ld returned 1 exit status
+hasgot -ltermcap tgetent tgetstr tgetnum tputs: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -ltermcap
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../lib/gcc/arm-marvell-linux-gnueabi/4.6.4/../../../../arm-marvell-linux-gnueabi/bin/ld: cannot find -ltermcap
+collect2: ld returned 1 exit status
+hasgot -lcurses -ltermcap tgetent tgetstr tgetnum tputs: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -lcurses -ltermcap
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../lib/gcc/arm-marvell-linux-gnueabi/4.6.4/../../../../arm-marvell-linux-gnueabi/bin/ld: cannot find -lcurses
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../lib/gcc/arm-marvell-linux-gnueabi/4.6.4/../../../../arm-marvell-linux-gnueabi/bin/ld: cannot find -ltermcap
+collect2: ld returned 1 exit status
+hasgot -lncurses tgetent tgetstr tgetnum tputs: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -lncurses
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../lib/gcc/arm-marvell-linux-gnueabi/4.6.4/../../../../arm-marvell-linux-gnueabi/bin/ld: cannot find -lncurses
+collect2: ld returned 1 exit status
+hasgot socket socketpair bind listen accept connect: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/socket.h -t socklen_t: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot inet_aton: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -i sys/socket.h -i netinet/in.h -t struct sockaddr_in6: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot getaddrinfo getnameinfo inet_pton inet_ntop: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i unistd.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -t off_t: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -i dirent.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot rewinddir: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot lockf: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot mkfifo: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot getcwd: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot getwd: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot getpriority setpriority: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -i utime.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot utime: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot utimes: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot dup2: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot fchmod fchown: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot truncate ftruncate: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -i sys/select.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot select: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/types.h -i sys/select.h -t fd_set: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot symlink readlink lstat: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot waitpid: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot wait4: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i limits.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i limits.h -i grp.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i limits.h -i grp.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i termios.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot tcgetattr tcsetattr tcsendbreak tcflush tcflow: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot setitimer: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot gethostname: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i sys/utsname.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot uname: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot gettimeofday: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot mktime: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot setsid: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot putenv: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot -i locale.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot setlocale: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot dlopen: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+/tmp/ccq7L76d.o: In function `main':
+hasgot.c:(.text+0x4): undefined reference to `dlopen'
+collect2: ld returned 1 exit status
+hasgot -ldl dlopen: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -ldl
+hasgot -i sys/types.h -i sys/mman.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot mmap munmap: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+trycompile: arm-marvell-linux-gnueabi-gcc -O  -o tst -DNUM_ARGS=5 gethostbyname.c 
+gethostbyname.c: In function 'main':
+gethostbyname.c:31:3: warning: passing argument 5 of 'gethostbyname_r' from incompatible pointer type [enabled by default]
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../arm-marvell-linux-gnueabi/libc/usr/include/netdb.h:180:12: note: expected 'struct hostent ** __restrict__' but argument is of type 'int *'
+gethostbyname.c:31:3: error: too few arguments to function 'gethostbyname_r'
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../arm-marvell-linux-gnueabi/libc/usr/include/netdb.h:180:12: note: declared here
+trycompile: arm-marvell-linux-gnueabi-gcc -O  -o tst -DNUM_ARGS=6 gethostbyname.c 
+trycompile: arm-marvell-linux-gnueabi-gcc -O  -o tst -DNUM_ARGS=7 gethostbyaddr.c 
+gethostbyaddr.c: In function 'main':
+gethostbyaddr.c:36:24: warning: passing argument 7 of 'gethostbyaddr_r' from incompatible pointer type [enabled by default]
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../arm-marvell-linux-gnueabi/libc/usr/include/netdb.h:173:12: note: expected 'struct hostent ** __restrict__' but argument is of type 'int *'
+gethostbyaddr.c:36:24: error: too few arguments to function 'gethostbyaddr_r'
+/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/bin/../arm-marvell-linux-gnueabi/libc/usr/include/netdb.h:173:12: note: declared here
+trycompile: arm-marvell-linux-gnueabi-gcc -O  -o tst -DNUM_ARGS=8 gethostbyaddr.c 
+hasgot -i pthread.h -lpthread pthread_self: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -lpthread
+hasgot -lpthread sigwait: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c  -lpthread
+hasgot -i bfd.h: arm-marvell-linux-gnueabi-gcc -O   -o tst hasgot.c 
+hasgot.c:1:17: fatal error: bfd.h: No such file or directory
+compilation terminated.
+../boot/ocamlrun: 1: ../boot/ocamlrun: Syntax error: word unexpected (expecting ")")
+make[5]: *** [pervasives.cmi] Error 2
+make[4]: *** [coldstart] Error 2
+make[3]: *** [world] Error 2
+boot/ocamlyacc: 1: boot/ocamlyacc: Syntax error: word unexpected (expecting ")")
+make[4]: *** [parsing/parser.ml] Error 2
+make[3]: *** [world] Error 2
++ dirname ./build/mixed-boot.sh
++ cd ./build/..
++ touch build/ocamlbuild_mixed_mode
++ mkdir -p _build
++ cp -rf boot _build/
++ ./build/mkconfig.sh
++ ./build/mkmyocamlbuild_config.sh
++ ./build/boot.sh
++ TAGLINE=true: -use_stdlib
++ ./boot/ocamlrun boot/myocamlbuild.boot -tag-line  boot/stdlib.cma boot/std_exit.cmo
++ boot/ocamlrun boot/myocamlbuild.boot -tag-line  -log _boot_log1 ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuildlight.byte
++ rm -f _build/myocamlbuild
++ boot/ocamlrun boot/myocamlbuild.boot -just-plugin -install-lib-dir _build/ocamlbuild -byte-plugin
++ cp _build/myocamlbuild boot/myocamlbuild
++ ./boot/ocamlrun boot/myocamlbuild -tag-line  -log _boot_log2 boot/camlheader ocamlc
++ ./boot/ocamlrun boot/myocamlbuild byte_stdlib_mixed_mode ocamlc lex/ocamllex ocamlbuild/ocamlbuildlib.cma ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuild.byte ocamlbuild/ocamlbuildlight.byte
+File "_none_", line 1, characters 0-1:
+Error: Error on dynamically loaded library: ../otherlibs/unix/dllunix.so: ../otherlibs/unix/dllunix.so: cannot open shared object file: No such file or directory
+make[4]: *** [ocamlbuild.byte] Error 2
+make[3]: *** [world] Error 2
++ dirname ./build/mixed-boot.sh
++ cd ./build/..
++ touch build/ocamlbuild_mixed_mode
++ mkdir -p _build
++ cp -rf boot _build/
++ ./build/mkconfig.sh
++ ./build/mkmyocamlbuild_config.sh
++ ./build/boot.sh
++ TAGLINE=true: -use_stdlib
++ ./boot/ocamlrun boot/myocamlbuild.boot -tag-line  boot/stdlib.cma boot/std_exit.cmo
++ boot/ocamlrun boot/myocamlbuild.boot -tag-line  -log _boot_log1 ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuildlight.byte
++ rm -f _build/myocamlbuild
++ boot/ocamlrun boot/myocamlbuild.boot -just-plugin -install-lib-dir _build/ocamlbuild -byte-plugin
++ cp _build/myocamlbuild boot/myocamlbuild
++ ./boot/ocamlrun boot/myocamlbuild -tag-line  -log _boot_log2 boot/camlheader ocamlc
++ ./boot/ocamlrun boot/myocamlbuild byte_stdlib_mixed_mode ocamlc lex/ocamllex ocamlbuild/ocamlbuildlib.cma ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuild.byte ocamlbuild/ocamlbuildlight.byte
++ ./boot/ocamlrun boot/myocamlbuild byte_stdlib_mixed_mode ocamlc lex/ocamllex camlp4/Camlp4/Camlp4Ast.partial.ml camlp4/boot/camlp4boot.byte camlp4/Camlp4.cmo camlp4/Camlp4Top.cmo camlp4/camlp4prof.byte camlp4/mkcamlp4.byte camlp4/camlp4.byte camlp4/camlp4fulllib.cma camlp4/camlp4boot.byte camlp4/camlp4boot.cma camlp4/camlp4r.byte camlp4/camlp4r.cma camlp4/camlp4rf.byte camlp4/camlp4rf.cma camlp4/camlp4o.byte camlp4/camlp4o.cma camlp4/camlp4of.byte camlp4/camlp4of.cma camlp4/camlp4oof.byte camlp4/camlp4oof.cma camlp4/camlp4orf.byte camlp4/camlp4orf.cma camlp4/Camlp4Parsers/Camlp4AstLoader.cmo camlp4/Camlp4Parsers/Camlp4DebugParser.cmo camlp4/Camlp4Parsers/Camlp4GrammarParser.cmo camlp4/Camlp4Parsers/Camlp4ListComprehension.cmo camlp4/Camlp4Parsers/Camlp4MacroParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.cmo camlp4/Camlp4Parsers/Camlp4OCamlParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlParserParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.cmo camlp4/Camlp4Parsers/Camlp4QuotationCommon.cmo camlp4/Camlp4Parsers/Camlp4QuotationExpander.cmo camlp4/Camlp4Printers/Camlp4AstDumper.cmo camlp4/Camlp4Printers/Camlp4AutoPrinter.cmo camlp4/Camlp4Printers/Camlp4NullDumper.cmo camlp4/Camlp4Printers/Camlp4OCamlAstDumper.cmo camlp4/Camlp4Printers/Camlp4OCamlPrinter.cmo camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.cmo camlp4/Camlp4Filters/Camlp4AstLifter.cmo camlp4/Camlp4Filters/Camlp4ExceptionTracer.cmo camlp4/Camlp4Filters/Camlp4FoldGenerator.cmo camlp4/Camlp4Filters/Camlp4LocationStripper.cmo camlp4/Camlp4Filters/Camlp4MapGenerator.cmo camlp4/Camlp4Filters/Camlp4MetaGenerator.cmo camlp4/Camlp4Filters/Camlp4Profiler.cmo camlp4/Camlp4Filters/Camlp4TrashRemover.cmo
+5 shift/reduce conflicts.
+File "_none_", line 1, characters 0-1:
+Error: Error on dynamically loaded library: ../otherlibs/str/dllcamlstr.so: ../otherlibs/str/dllcamlstr.so: cannot open shared object file: No such file or directory
+make[5]: *** [ocamldoc] Error 2
+make[4]: *** [ocamldoc] Error 2
+make[3]: *** [world] Error 2
++ dirname ./build/mixed-boot.sh
++ cd ./build/..
++ touch build/ocamlbuild_mixed_mode
++ mkdir -p _build
++ cp -rf boot _build/
++ ./build/mkconfig.sh
++ ./build/mkmyocamlbuild_config.sh
++ ./build/boot.sh
++ TAGLINE=true: -use_stdlib
++ ./boot/ocamlrun boot/myocamlbuild.boot -tag-line  boot/stdlib.cma boot/std_exit.cmo
++ boot/ocamlrun boot/myocamlbuild.boot -tag-line  -log _boot_log1 ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuildlight.byte
++ rm -f _build/myocamlbuild
++ boot/ocamlrun boot/myocamlbuild.boot -just-plugin -install-lib-dir _build/ocamlbuild -byte-plugin
++ cp _build/myocamlbuild boot/myocamlbuild
++ ./boot/ocamlrun boot/myocamlbuild -tag-line  -log _boot_log2 boot/camlheader ocamlc
++ ./boot/ocamlrun boot/myocamlbuild byte_stdlib_mixed_mode ocamlc lex/ocamllex ocamlbuild/ocamlbuildlib.cma ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuild.byte ocamlbuild/ocamlbuildlight.byte
++ ./boot/ocamlrun boot/myocamlbuild byte_stdlib_mixed_mode ocamlc lex/ocamllex camlp4/Camlp4/Camlp4Ast.partial.ml camlp4/boot/camlp4boot.byte camlp4/Camlp4.cmo camlp4/Camlp4Top.cmo camlp4/camlp4prof.byte camlp4/mkcamlp4.byte camlp4/camlp4.byte camlp4/camlp4fulllib.cma camlp4/camlp4boot.byte camlp4/camlp4boot.cma camlp4/camlp4r.byte camlp4/camlp4r.cma camlp4/camlp4rf.byte camlp4/camlp4rf.cma camlp4/camlp4o.byte camlp4/camlp4o.cma camlp4/camlp4of.byte camlp4/camlp4of.cma camlp4/camlp4oof.byte camlp4/camlp4oof.cma camlp4/camlp4orf.byte camlp4/camlp4orf.cma camlp4/Camlp4Parsers/Camlp4AstLoader.cmo camlp4/Camlp4Parsers/Camlp4DebugParser.cmo camlp4/Camlp4Parsers/Camlp4GrammarParser.cmo camlp4/Camlp4Parsers/Camlp4ListComprehension.cmo camlp4/Camlp4Parsers/Camlp4MacroParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.cmo camlp4/Camlp4Parsers/Camlp4OCamlParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlParserParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.cmo camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.cmo camlp4/Camlp4Parsers/Camlp4QuotationCommon.cmo camlp4/Camlp4Parsers/Camlp4QuotationExpander.cmo camlp4/Camlp4Printers/Camlp4AstDumper.cmo camlp4/Camlp4Printers/Camlp4AutoPrinter.cmo camlp4/Camlp4Printers/Camlp4NullDumper.cmo camlp4/Camlp4Printers/Camlp4OCamlAstDumper.cmo camlp4/Camlp4Printers/Camlp4OCamlPrinter.cmo camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.cmo camlp4/Camlp4Filters/Camlp4AstLifter.cmo camlp4/Camlp4Filters/Camlp4ExceptionTracer.cmo camlp4/Camlp4Filters/Camlp4FoldGenerator.cmo camlp4/Camlp4Filters/Camlp4LocationStripper.cmo camlp4/Camlp4Filters/Camlp4MapGenerator.cmo camlp4/Camlp4Filters/Camlp4MetaGenerator.cmo camlp4/Camlp4Filters/Camlp4Profiler.cmo camlp4/Camlp4Filters/Camlp4TrashRemover.cmo
++ dirname ./build/mixed-boot.sh
++ cd ./build/..
++ touch build/ocamlbuild_mixed_mode
++ mkdir -p _build
++ cp -rf boot _build/
++ ./build/mkconfig.sh
++ ./build/mkmyocamlbuild_config.sh
++ ./build/boot.sh
++ TAGLINE=true: -use_stdlib
++ ./boot/ocamlrun boot/myocamlbuild.boot -tag-line  boot/stdlib.cma boot/std_exit.cmo
++ boot/ocamlrun boot/myocamlbuild.boot -tag-line  -log _boot_log1 ocamlbuild/ocamlbuildlightlib.cma ocamlbuild/ocamlbuildlight.byte
++ rm -f _build/myocamlbuild
++ boot/ocamlrun boot/myocamlbuild.boot -just-plugin -install-lib-dir _build/ocamlbuild -byte-plugin
++ cp _build/myocamlbuild boot/myocamlbuild
++ ./boot/ocamlrun boot/myocamlbuild -tag-line  -log _boot_log2 boot/camlheader ocamlc
++ ./boot/ocamlrun boot/myocamlbuild native_stdlib_mixed_mode ocamlopt lex/ocamllex ocamlbuild/ocamlbuildlib.cmxa ocamlbuild/ocamlbuildlightlib.cmxa
++ arm-marvell-linux-gnueabi-gcc -o 'unison'   '-Llwt' '-Lubase' '-Lsystem' '-Lsystem/generic' '-Llwt/generic' '-L/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml' -I/home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/arm-marvell-linux-gnueabi/libc/include -mcpu=marvell-pj4 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard -DSYNO_MARVELL_ARMADA370 -DSYNO_PLATFORM=MARVELL_ARMADA370 -I/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install//usr/local/include  '/tmp/camlprim4c23e0.c' '-lbigarray' '-lcamlstr' '-lunix' '-static' 'osxsupport.o' 'pty.o' 'bytearray_stubs.o' '-lutil' '-lcamlrun' -I'/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml' -lm  -ldl  -lpthread
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libcamlrun.a(unix.o): In function `caml_dlopen':
+unix.c:(.text+0x29c): warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getgr.o): In function `unix_getgrgid':
+getgr.c:(.text+0xfc): warning: Using 'getgrgid' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getgr.o): In function `unix_getgrnam':
+getgr.c:(.text+0xd8): warning: Using 'getgrnam' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getpw.o): In function `unix_getpwnam':
+getpw.c:(.text+0x128): warning: Using 'getpwnam' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getpw.o): In function `unix_getpwuid':
+getpw.c:(.text+0x14c): warning: Using 'getpwuid' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getaddrinfo.o): In function `unix_getaddrinfo':
+getaddrinfo.c:(.text+0x1f4): warning: Using 'getaddrinfo' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(gethost.o): In function `unix_gethostbyaddr':
+gethost.c:(.text+0x1f4): warning: Using 'gethostbyaddr_r' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libcamlrun.a(debugger.o): In function `caml_debugger_init':
+debugger.c:(.text+0x2c8): warning: Using 'gethostbyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(gethost.o): In function `unix_gethostbyname':
+gethost.c:(.text+0x28c): warning: Using 'gethostbyname_r' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getproto.o): In function `unix_getprotobynumber':
+getproto.c:(.text+0xdc): warning: Using 'getprotobynumber' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getproto.o): In function `unix_getprotobyname':
+getproto.c:(.text+0xb8): warning: Using 'getprotobyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getserv.o): In function `unix_getservbyname':
+getserv.c:(.text+0xe4): warning: Using 'getservbyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/home/peter/syno/spksrc-unison/cross/unison/work-armadaxp/install/usr/local/lib/ocaml/libunix.a(getserv.o): In function `unix_getservbyport':
+getserv.c:(.text+0x114): warning: Using 'getservbyport' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking

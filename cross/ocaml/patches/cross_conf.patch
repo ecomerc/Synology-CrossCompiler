@@ -1,0 +1,48 @@
+--- /dev/null	2014-09-24 19:28:59.116000001 +0200
++++ config/auto-aux/cross_compile_conf.arm-none-linux-gnueabi	2014-09-24 23:08:07.000000000 +0200
+@@ -0,0 +1,20 @@
++#!/bin/sh
++
++case "$1" in
++  ansi.c)
++    exit 0;;
++  sizes.c)
++    echo "4 4 4 2";;
++  longlong.c)
++    exit 0;;
++  endian.c)
++    exit 1;;
++  dblalign.c)
++    exit 0;;
++  int64align.c)
++    exit 0;;
++  divmod.c)
++    exit 0;;
++  *)
++    exit 100;;
++esac
+\ No newline at end of file
+--- /dev/null	2014-09-24 19:28:59.116000001 +0200
++++ config/auto-aux/cross_compile_conf.arm-marvell-linux-gnueabi	2014-09-24 23:08:07.000000000 +0200
+@@ -0,0 +1,20 @@
++#!/bin/sh
++
++case "$1" in
++  ansi.c)
++    exit 0;;
++  sizes.c)
++    echo "4 4 4 2";;
++  longlong.c)
++    exit 0;;
++  endian.c)
++    exit 1;;
++  dblalign.c)
++    exit 0;;
++  int64align.c)
++    exit 0;;
++  divmod.c)
++    exit 0;;
++  *)
++    exit 100;;
++esac
+\ No newline at end of file

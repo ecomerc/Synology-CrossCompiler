@@ -7,7 +7,6 @@ PKG_DIR = $(PKG_NAME)-$(PKG_VERS)
 
 #THIS IS ONLY A CROSS COMPILER PACKAGE NOT AN ACTUAL PACKAGE FOR DISTRIBUTION
 
-REQ_KERNEL = 1
 DEPENDS = 
 
 HOMEPAGE = http://caml.inria.fr/
@@ -15,9 +14,7 @@ COMMENT  = Caml is a general-purpose programming language, designed with program
 LICENSE  = GNU Public License
 
 
-CONFIGURE_ARGS = -verbose -prefix /home/peter/syno/spksrc-unison/toolchains/syno-armadaxp/work/arm-marvell-linux-gnueabi/ -host arm-marvell-linux-gnueabi -cc arm-marvell-linux-gnueabi-gcc -as arm-marvell-linux-gnueabi-as -aspp "arm-marvell-linux-gnueabi-gcc -E" -partialld "arm-marvell-linux-gnueabi-ld -r"
-## make world
-
+CONFIGURE_ARGS = -verbose -prefix $(TC_PATH) -bindir $(INSTALL_DIR)/usr/local/bin -libdir $(INSTALL_DIR)/usr/local/lib/ocaml -mandir $(INSTALL_DIR)/usr/local/man/manl -host $(TC_TARGET) -cc $(TC_PREFIX)gcc -as $(TC_PREFIX)as -aspp "$(TC_PREFIX)gcc -E" -partialld "$(TC_PREFIX)ld -r"
 
 INSTALL_TARGET = myInstall
 COMPILE_TARGET = myCompile
@@ -31,29 +28,31 @@ myConfig:
 
 .PHONY: myCompile
 myCompile:
-	@echo "COPY"
+	# First run create ocamlrun
 	$(RUN) $(MAKE) world || true
 	mv $(WORK_DIR)/$(PKG_DIR)/byterun/ocamlrun $(WORK_DIR)/ocamlrun.target
 	cp /usr/bin/ocamlrun $(WORK_DIR)/$(PKG_DIR)/byterun/
 	cp /usr/bin/ocamlrun $(WORK_DIR)/$(PKG_DIR)/boot/
-
+	# Second: ocamlyacc
 	$(RUN) $(MAKE) world || true
 	mv $(WORK_DIR)/$(PKG_DIR)/yacc/ocamlyacc $(WORK_DIR)/ocamlyacc.target
 	cp /usr/bin/ocamlyacc $(WORK_DIR)/$(PKG_DIR)/yacc/
 	cp /usr/bin/ocamlyacc $(WORK_DIR)/$(PKG_DIR)/boot/
-
+	# Third: dllunix.so
 	$(RUN) $(MAKE) world || true	
 	mv $(WORK_DIR)/$(PKG_DIR)/otherlibs/unix/dllunix.so $(WORK_DIR)/dllunix.so.target
 	cp /usr/lib/ocaml/stublibs/dllunix.so $(WORK_DIR)/$(PKG_DIR)/otherlibs/unix/
-
+	# Fourth: dllcamlstr.so
 	$(RUN) $(MAKE) world || true	
 	mv $(WORK_DIR)/$(PKG_DIR)/otherlibs/str/dllcamlstr.so $(WORK_DIR)/dllcamlstr.so.target
 	cp /usr/lib/ocaml/stublibs/dllcamlstr.so $(WORK_DIR)/$(PKG_DIR)/otherlibs/str/
-
+	# Fift: Everything
 	$(RUN) $(MAKE) world 
-	$(RUN) $(MAKE) opt 
+	@echo "!!!!!!!!!!!!!!!!!!!"
+	@echo $(INSTALL_DIR)
+	$(RUN) $(MAKE) ARCH=arm opt
 
 .PHONY: myInstall
 myInstall:
-	##$(RUN) $(MAKE) install DESTDIR=$(INSTALL_DIR)
+	$(RUN) $(MAKE) install DESTDIR=$(INSTALL_DIR)
 
