@@ -1,0 +1,11 @@
+--- Makefile.OCaml.old	2014-09-24 14:48:16.494219501 +0200
++++ Makefile.OCaml	2014-09-24 14:49:01.962219502 +0200
+@@ -420,7 +420,7 @@
+ 
+ $(NAME)$(EXEC_EXT): $(CAMLOBJS) $(COBJS)
+ 	@echo Linking $@
+-	$(CAMLC) -verbose $(CAMLFLAGS) -o $@ $(CFLAGS) $(CAMLLIBS) $^ $(CLIBS)
++	$(CAMLC) -verbose $(CAMLFLAGS) -o $@ -ccopt '$(CFLAGS)' $(CAMLLIBS) $^ $(CLIBS)
+ 
+ # Unfortunately -output-obj does not put .o files into the output, only .cmx
+ # files, so we have to use $(LD) to take care of COBJS.
